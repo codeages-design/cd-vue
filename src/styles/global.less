@@ -1,0 +1,29 @@
+*,
+*:before, 
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: @bg;
+  line-height: 22px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.56);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
+}
+
+@font-face {
+  font-family: "helvetica neue";
+  src: local("helvetica neue");
+  unicode-range: U+30-39;
+}
+
+.@{prefix}-icon {
+  line-height: 1;
+}

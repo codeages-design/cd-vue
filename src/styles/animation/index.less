@@ -1,0 +1,20 @@
+.make-animate(@animateName, @animateTime: 0.3s, @functionFunction: ease, @animationDelay: 0) {
+  .@{animateName}-enter-active {
+    animation-name: ~"@{animateName}In";
+  }
+  .@{animateName}-leave-active {
+    animation-name: ~"@{animateName}Out";
+  }
+
+  .@{animateName}-enter-active,
+  .@{animateName}-leave-active {
+    animation-duration: @animateTime;
+    animation-timing-function: @functionFunction;
+    animation-delay: @animationDelay;
+  }
+}
+
+@import './fade.less';
+
+
+.make-animate(fade);
