@@ -51,6 +51,8 @@
 // Fonts
 @font-family:            Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;;
 @font-size:              14px;
+@font-size-xs:           12px; 
+@font-weight:            500;
 @spacing-xs:             8px;
 @spacing-sm:             16px;
 @spacing:                24px;
@@ -65,13 +67,33 @@
 /******************************* Component ****************************************/
 
 // alert
-@alert-font-weight:      500;
-@alert-padding:          16px;
+@alert-font-weight:      @font-weight;
+@alert-padding:          @spacing-sm;
 @alert-margin-bottom:    @spacing;
 @alert-line-height:      @line-height;
 @alert-border-radius:    @border-radius;
 @alert-font-size:        @font-size;
 @alert-color-tint:       @color-tint;
+
 @alert-icon-font-size:   @font-size;
 
+// panel
+@panel-margin-bottom:         @spacing;
+@panel-border-radius:         @border-radius;
+@panel-shadow-level:          2px;
 
+@panel-sm-heading-padding:    @spacing-sm @spacing;
+@panel-sm-heading-padding-xs: @spacing-sm;
+@panel-heading-padding:       @spacing @spacing-lg;
+@panel-heading-padding-xs:    @spacing-sm;
+
+@panel-title-font-size:       @font-size;
+@panel-title-color:           @dark-major;
+@panel-title-font-weight:     @font-weight;
+
+@panel-action-font-size:      @font-size-xs;
+
+@panel-sm-body-padding:       @spacing;
+@panel-sm-body-padding-xs:    @spacing-sm;
+@panel-body-padding:          @spacing-lg;
+@panel-body-padding-xs:       @spacing-sm;

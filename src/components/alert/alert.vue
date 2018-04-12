@@ -1,8 +1,14 @@
 <template>
   <transition name="fade">
-    <div :class="className" v-if="!isClose">
-      <span :class="messageClassName"><slot></slot></span>
-      <a href="javascript:;" :class="iconClassName" v-if="isShowIcon" @click="close">
+    <div :class="classes" v-if="!isClose">
+      <span :class="`${prefixClass}__message`">
+        <slot></slot>
+      </span>
+      <a 
+        href="javascript:;" 
+        :class="`${prefixClass}__close`" 
+        @click="close"
+        v-if="isShowIcon">
         <icon type="close"></icon>
       </a>
     </div>
@@ -13,8 +19,10 @@
 import Icon from '../icon';
 import { prefix } from '../../utils/prefix';
 
+const prefixClass = `${prefix}-alert`;
+
 export default {
-  name: `${prefix}-alert`,
+  name: prefixClass,
   components: {
     Icon,
   },
@@ -32,22 +40,17 @@ export default {
   },
   data() {
     return {
+      prefixClass,
       isClose: false
     }
   },
   computed: {
-    className() {
+    classes() {
       return [
-        `${prefix}-alert`,
-        `${prefix}-alert--${this.type}`,
+        this.prefixClass,
+        `${this.prefixClass}--${this.type}`,
       ];
     },
-    messageClassName() {
-      return `${prefix}-alert__message`;
-    },
-    iconClassName() {
-      return `${prefix}-alert__close`;
-    }
   },
   methods: {
     close(e) {

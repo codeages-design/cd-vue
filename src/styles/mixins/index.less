@@ -5,3 +5,11 @@
 .hover-light(@opacity: .8) {
   opacity: @opacity;
 }
+
+.box-shadow-z(@level) {
+  box-shadow: 0 0 @level 0 rgba(0,0,0,0.02), 0 0 @level 0 rgba(0,0,0,0.04), 0 @level @level 0 rgba(0,0,0,0.06);
+}
+
+.box-shadow-inset(@value: 0 -1px 0 0) {
+  box-shadow: inset @value rgba(0, 0, 0, 0.08);
+}
