@@ -5,3 +5,11 @@ export const getUUID = (prefix, ids = []) => {
 }
 
 export const prefix = 'cd';
+
+export const isArray = (arr) => {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+}
+
+export const isObject = (obj) => {
+  return Object.prototype.toString.call(obj) == '[object Object]';
+};
