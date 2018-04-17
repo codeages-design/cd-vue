@@ -1,0 +1,52 @@
+.@{prefix}-message-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.@{prefix}-message {
+  position: relative;
+  display: inline-block;
+  color: @message-color;
+  line-height: @message-line-height;
+  font-size: @message-font-size;
+  padding: @message-padding;
+  border-radius: @message-border-radius;
+  font-weight: @message-font-weight;
+  border: @message-border;
+  &&--danger {
+    background: @color-danger;
+    .message-box-shadow(@color-danger);
+  }
+  &&--success {
+    background: @color-success;
+    .message-box-shadow(@color-success);
+  }
+  &&--info {
+    background: @color-info;
+    .message-box-shadow(@color-info);
+  }
+  &&--warning {
+    background: @color-warning;
+    .message-box-shadow(@color-warning);
+  }
+  &__action {
+    text-align: right;
+    margin-left: @message-action-margin-left;
+    font-weight: @message-action-font-weight;
+    color: @message-action-color;
+    > a {
+      opacity: @message-action-opacity;
+      color: @message-action-color;
+      &:hover {
+        opacity: @message-action-hover-opacity;
+        color: @message-action-color;
+      }
+    }
+  }
+}
+
+.message-box-shadow(@color) {
+  box-shadow: 0 0 8px 0 rgba(red(@color), green(@color), blue(@color), 0.1), 0 8px 8px 0 rgba(red(@color), green(@color), blue(@color), 0.2);
+}

@@ -8,7 +8,8 @@
         href="javascript:;" 
         :class="`${prefixClass}__close`" 
         @click="close"
-        v-if="isShowIcon">
+        v-if="isShowIcon"
+      >
         <icon type="close"></icon>
       </a>
     </div>
@@ -17,7 +18,7 @@
 
 <script>
 import Icon from '../icon';
-import { prefix } from '../../utils/prefix';
+import { prefix } from '../../utils';
 
 const prefixClass = `${prefix}-alert`;
 

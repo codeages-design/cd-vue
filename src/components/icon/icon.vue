@@ -1,9 +1,9 @@
 <template>
-  <i :class="className"></i>
+  <i :class="classes"></i>
 </template>
 
 <script>
-import { prefix } from '../../utils/prefix';
+import { prefix } from '../../utils';
 
 export default {
   name: `${prefix}-icon`,
@@ -13,7 +13,7 @@ export default {
     }
   },
   computed: {
-    className() {
+    classes() {
       return [
         `${prefix}-icon`,
         `${prefix}-icon-${this.type}`

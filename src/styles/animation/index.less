@@ -1,9 +1,9 @@
 .make-animate(@animateName, @animateTime: 0.3s, @functionFunction: ease, @animationDelay: 0) {
   .@{animateName}-enter-active {
-    animation-name: ~"@{animateName}In";
+    animation-name: ~"@{animateName}-in";
   }
   .@{animateName}-leave-active {
-    animation-name: ~"@{animateName}Out";
+    animation-name: ~"@{animateName}-out";
   }
 
   .@{animateName}-enter-active,
@@ -15,6 +15,8 @@
 }
 
 @import './fade.less';
+@import './message-fade.less';
 
 
 .make-animate(fade);
+.make-animate(message-fade);
