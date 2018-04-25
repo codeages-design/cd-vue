@@ -1,0 +1,60 @@
+.@{prefix}-v-menu {
+  margin: 0;
+  padding: 16px 0;
+  font-size: 14px;
+  list-style: none;
+  &__title {
+    position: relative;
+    display: block;
+    padding: 12px 24px;
+    line-height: 20px;
+    color: #fff;
+    .text-overflow;
+    .transition();
+    &:hover {
+      cursor: pointer;
+      background-color: darken(@sidebar-bg, 3%);
+      .transition();
+    }
+    &.active {
+      background-color: darken(@sidebar-bg, 5%);
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 4px;
+        height: 100%;
+        background-color: @color-primary;
+      }
+    }
+    &.open {
+      .@{prefix}-v-menu__action {
+        > i {
+          transform: rotate(180deg);
+          .transition();
+        }
+      }
+    }
+  }
+  &__action {
+    > i {
+      position: absolute;
+      right: 24px;
+      .transition();
+    }
+  }
+}
+
+.@{prefix}-v-menu.@{prefix}-v-menu--collapse {
+  > li {
+    position: relative;
+    padding-left: 0;
+  }
+  .@{prefix}-v-menu__action {
+    display: none;
+  }
+  .@{prefix}-v-menu__name {
+    display: none;
+  }
+}

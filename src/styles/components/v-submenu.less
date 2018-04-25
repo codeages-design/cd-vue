@@ -1,0 +1,34 @@
+.@{prefix}-v-submenu {
+  padding-left: 0;
+  background: #000;
+  > li {
+    padding: 12px 24px 12px 48px;
+    list-style: none;
+    .transition();
+    opacity: 0.6;
+    color: #f1f1f1;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+      .transition();
+    }
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.@{prefix}-v-menu.@{prefix}-v-menu--collapse {
+  .@{prefix}-v-submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    overflow-y: auto;
+    max-height: 500px;
+    > li {
+      padding: 12px;
+      min-width: 100px;
+      .text-overflow;
+    }
+  }
+}
