@@ -1,8 +1,3 @@
-<template>
-  <i :class="classes"></i>
-</template>
-
-<script>
 import { prefix } from '../../utils';
 
 export default {
@@ -10,6 +5,9 @@ export default {
   props: {
     type: {
       type: String,
+    },
+    styles: {
+      type: Object,
     }
   },
   computed: {
@@ -19,7 +17,11 @@ export default {
         `${prefix}-icon-${this.type}`
       ]
     }
+  },
+  render(h, context) {
+    return h('i', {
+      class: this.classes,
+      style: this.styles
+    }, this.$slots.default)
   }
 }
-</script>
-

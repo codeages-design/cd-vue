@@ -22,10 +22,14 @@ const prefixClass = `${prefix}-sidebar`;
 
 export default {
   name: prefixClass,
-  props: [
-    'isCollapse',
-    'title'
-  ],
+  props: {
+    isCollapse: {
+      type: Boolean
+    },
+    title: {
+      type: String
+    }
+  },
   data() {
     return {
       prefixClass,
