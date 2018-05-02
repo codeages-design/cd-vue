@@ -1,4 +1,5 @@
 import Alert from './components/alert';
+import Badge from './components/badge';
 
 const components = {
   Alert,
