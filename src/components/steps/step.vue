@@ -1,27 +1,28 @@
 <template>
   <div :class="prefixClass" :style="styles">
-      <div :class="[`${prefixClass}__head`,
-        `is-${currentStatus}`]">
-        <div :class="`${prefixClass}__line`">
-          <i :class="`${prefixClass}__line-inner`"></i>
-        </div>
-        <div :class="`${prefixClass}__icon`">
-          <div v-if="showIcon" 
-            :class="`${prefixClass}__icon-inner`">{{ index + 1 }}</div>
-          <div v-else :class="iconClasses"></div>
-        </div>
+    <div :class="[`${prefixClass}__head`,
+      `is-${currentStatus}`]">
+      <div :class="`${prefixClass}__line`">
+        <i :class="`${prefixClass}__line-inner`"></i>
       </div>
+      <div :class="`${prefixClass}__icon`">
+        <div v-if="showIcon" 
+          :class="`${prefixClass}__icon-inner`">{{ index + 1 }}</div>
+        <div v-else :class="iconClasses"></div>
+      </div>
+    </div>
 
-      <div :class="`${prefixClass}__main`">
-          <div :class="[`${prefixClass}__title`, `is-${ currentStatus }`]">
-            <slot name="title">{{ title }}</slot>
-          </div>
-          <div :class="[`${prefixClass}__description`, `is-${ currentStatus }`]">
-            <slot name="description">{{ description }}</slot>
-          </div>
+    <div :class="`${prefixClass}__main`">
+      <div :class="[`${prefixClass}__title`, `is-${ currentStatus }`]">
+        <slot name="title">{{ title }}</slot>
       </div>
+      <div :class="[`${prefixClass}__description`, `is-${ currentStatus }`]">
+        <slot name="description">{{ description }}</slot>
+      </div>
+    </div>
   </div>
 </template>
+
 <script>
 import { prefix } from '../../utils';
 const prefixClass = `${prefix}-step`;
@@ -96,11 +97,11 @@ export default {
   },
   methods: {
     updateStatus(val) {
-      if(val > this.index) {
+      if (val > this.index) {
         this.internalStatus = 'finish';
-      }else if (val === this.index && this.prevStatus !== 'error') {
+      } else if (val === this.index && this.prevStatus !== 'error') {
         this.internalStatus = this.$parent.status;
-      }else {
+      } else {
         this.internalStatus = 'wait';
       }
     }

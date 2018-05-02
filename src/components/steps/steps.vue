@@ -3,6 +3,7 @@
     <slot></slot>
   </div>
 </template>
+
 <script>
 import { prefix } from '../../utils';
 const prefixClass = `${prefix}-steps`;
