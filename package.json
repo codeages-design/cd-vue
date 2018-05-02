@@ -5,7 +5,8 @@
   "main": "dist/index.min.js",
   "scripts": {
     "build:style": "gulp --gulpfile build/gulp.style.js",
-    "build": "webpack --config build/webpack.config.js"
+    "build": "webpack --config build/webpack.config.js",
+    "build:all": "npm run build:style && npm run build"
   },
   "repository": {
     "type": "git",
