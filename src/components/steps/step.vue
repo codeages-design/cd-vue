@@ -3,20 +3,21 @@
       <div :class="[`${prefixClass}__head`,
         `is-${currentStatus}`]">
         <div :class="`${prefixClass}__line`">
-            <i :class="`${prefixClass}__line-inner`"></i>
+          <i :class="`${prefixClass}__line-inner`"></i>
         </div>
         <div :class="`${prefixClass}__icon`">
-            <div v-if="!['finish', 'error'].includes(currentStatus)" :class="`${prefixClass}__icon-inner`">{{ index + 1 }}</div>
-            <div v-else :class="iconClasses"></div>
+          <div v-if="showIcon" 
+            :class="`${prefixClass}__icon-inner`">{{ index + 1 }}</div>
+          <div v-else :class="iconClasses"></div>
         </div>
       </div>
 
       <div :class="`${prefixClass}__main`">
           <div :class="[`${prefixClass}__title`, `is-${ currentStatus }`]">
-              <slot name="title">{{ title }}</slot>
+            <slot name="title">{{ title }}</slot>
           </div>
           <div :class="[`${prefixClass}__description`, `is-${ currentStatus }`]">
-              <slot name="description">{{ description }}</slot>
+            <slot name="description">{{ description }}</slot>
           </div>
       </div>
   </div>
@@ -40,6 +41,9 @@ export default {
     }
   },
   computed:{
+    showIcon() {
+      return !['finish', 'error'].includes(this.currentStatus);
+    },
     currentStatus() {
       return this.status || this.internalStatus;
     },
