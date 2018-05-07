@@ -24,7 +24,7 @@ export default {
     title: String,
     size: {
       validator(value) {
-        return ['sm'].includes(value)
+        return ['sm', ''].includes(value)
       },
       default: '',
     },
